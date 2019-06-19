@@ -332,6 +332,76 @@ namespace synthesizer
         // --------------------------------------------------------------------
 
         // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: Octave2 (Octave)
+        // --------------------------------------------------------------------
+        Octave _Octave2 = Octave._0;
+
+        void Raise_Octave2 ()
+        {
+          OnPropertyChanged ("Octave2");
+        }
+
+        public Octave Octave2
+        {
+            get { return _Octave2; }
+            set
+            {
+                if (_Octave2 == value)
+                {
+                    return;
+                }
+
+                var prev = _Octave2;
+
+                _Octave2 = value;
+
+                Changed_Octave2 (prev, _Octave2);
+
+                Raise_Octave2 ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_Octave2 (Octave prev, Octave current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: Octave2 (Octave)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: Semitone2 (Semitone)
+        // --------------------------------------------------------------------
+        Semitone _Semitone2 = Semitone._0;
+
+        void Raise_Semitone2 ()
+        {
+          OnPropertyChanged ("Semitone2");
+        }
+
+        public Semitone Semitone2
+        {
+            get { return _Semitone2; }
+            set
+            {
+                if (_Semitone2 == value)
+                {
+                    return;
+                }
+
+                var prev = _Semitone2;
+
+                _Semitone2 = value;
+
+                Changed_Semitone2 (prev, _Semitone2);
+
+                Raise_Semitone2 ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_Semitone2 (Semitone prev, Semitone current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: Semitone2 (Semitone)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
         // BEGIN_PROPERTY: WaveType3 (SignalGeneratorType)
         // --------------------------------------------------------------------
         SignalGeneratorType _WaveType3 = SignalGeneratorType.Sin;
@@ -364,6 +434,76 @@ namespace synthesizer
         partial void Changed_WaveType3 (SignalGeneratorType prev, SignalGeneratorType current);
         // --------------------------------------------------------------------
         // END_PROPERTY: WaveType3 (SignalGeneratorType)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: Octave3 (Octave)
+        // --------------------------------------------------------------------
+        Octave _Octave3 = Octave._0;
+
+        void Raise_Octave3 ()
+        {
+          OnPropertyChanged ("Octave3");
+        }
+
+        public Octave Octave3
+        {
+            get { return _Octave3; }
+            set
+            {
+                if (_Octave3 == value)
+                {
+                    return;
+                }
+
+                var prev = _Octave3;
+
+                _Octave3 = value;
+
+                Changed_Octave3 (prev, _Octave3);
+
+                Raise_Octave3 ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_Octave3 (Octave prev, Octave current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: Octave3 (Octave)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: Semitone3 (Semitone)
+        // --------------------------------------------------------------------
+        Semitone _Semitone3 = Semitone._0;
+
+        void Raise_Semitone3 ()
+        {
+          OnPropertyChanged ("Semitone3");
+        }
+
+        public Semitone Semitone3
+        {
+            get { return _Semitone3; }
+            set
+            {
+                if (_Semitone3 == value)
+                {
+                    return;
+                }
+
+                var prev = _Semitone3;
+
+                _Semitone3 = value;
+
+                Changed_Semitone3 (prev, _Semitone3);
+
+                Raise_Semitone3 ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_Semitone3 (Semitone prev, Semitone current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: Semitone3 (Semitone)
         // --------------------------------------------------------------------
 
         // --------------------------------------------------------------------

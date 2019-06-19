@@ -3,15 +3,39 @@ using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Input;
 
 namespace synthesizer
 {
     public enum BaseFrequency
     {
-      A2,
-      A3,
-      A4,
+      A2  = 0 ,
+      A3  = 1 ,
+      A4  = 2 ,
+    }
+
+    public enum Octave
+    {
+      _0  = 0 ,
+      _1  = 1 ,
+      _2  = 2 ,
+    }
+
+    public enum Semitone
+    {
+      _0  = 0 ,
+      _1  = 1 ,
+      _2  = 2 ,
+      _3  = 3 ,
+      _4  = 4 ,
+      _5  = 5 ,
+      _6  = 6 ,
+      _7  = 7 ,
+      _8  = 8 ,
+      _9  = 9 ,
+      _10 = 10,
+      _11 = 11,
     }
 
     public partial class MainWindowViewModel
@@ -33,30 +57,29 @@ namespace synthesizer
         private LowPassFilterSampleProvider _lpf;
         private IWavePlayer _player;
 
-        public int Voice2Freq => Voice2Octave + Voice2Semi;
-        public int Voice3Freq => Voice3Octave + Voice3Semi;
-        public int Voice2Octave { get; set; }
-        public int Voice3Octave { get; set; }
-        public int Voice2Semi { get; set; }
-        public int Voice3Semi { get; set; }
+        public int Voice2Freq => 12*(int)Octave2 + (int)Semitone2;
+        public int Voice3Freq => 12*(int)Octave3 + (int)Semitone3;
 
-        public SignalGeneratorType[] SelectableWaveforms =>
+        static T[] EnumValues<T>()
+        {
+          return Enum.GetValues(typeof(T)).Cast<T>().ToArray();
+        }
+
+        public SignalGeneratorType[] SelectableWaveforms => 
           new [] 
-          { 
-            SignalGeneratorType.Sin   , 
-            SignalGeneratorType.SawTooth, 
-            SignalGeneratorType.Square  , 
-            SignalGeneratorType.Triangle, 
-            SignalGeneratorType.White   ,
+          {
+            SignalGeneratorType.SawTooth  ,
+            SignalGeneratorType.Sin       ,
+            SignalGeneratorType.Square    ,
+            SignalGeneratorType.Triangle  ,
+            SignalGeneratorType.White     ,
           };
 
-        public BaseFrequency[] SelectableBaseFrequencies =>
-          new [] 
-          { 
-            BaseFrequency.A2, 
-            BaseFrequency.A3, 
-            BaseFrequency.A4, 
-          };
+        public BaseFrequency[] SelectableBaseFrequencies => EnumValues<BaseFrequency> ();
+
+        public Octave[] SelectableOctaves => EnumValues<Octave>();
+
+        public Semitone[] SelectableSemiTones => EnumValues<Semitone>();
 
         double BaseFrequencyInHz
         {

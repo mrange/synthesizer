@@ -696,30 +696,19 @@
 
           <Label FontWeight="Bold" Content="Octaves"/>
 
-          <ComboBox Width="50" HorizontalAlignment="Left"
-                              SelectionChanged="Octave2_SelectionChanged">
-            <ComboBoxItem HorizontalAlignment="Center" IsSelected="True">+0</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+1</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+2</ComboBoxItem>
-          </ComboBox>
+          <ComboBox 
+            Width="50" 
+            HorizontalAlignment="Left"
+            ItemsSource="{Binding SelectableOctaves}"
+            SelectedItem="{Binding Octave2}"/>
 
           <Label FontWeight="Bold" Content="Semitones"/>
 
-          <ComboBox Width="50" HorizontalAlignment="Left"
-                              SelectionChanged="Semitone2_SelectionChanged">
-            <ComboBoxItem HorizontalAlignment="Center" IsSelected="True">+0</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+1</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+2</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+3</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+4</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+5</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+6</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+7</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+8</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+9</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+10</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+11</ComboBoxItem>
-          </ComboBox>
+          <ComboBox 
+            Width="50" 
+            HorizontalAlignment="Left"
+            ItemsSource="{Binding SelectableSemiTones}"
+            SelectedItem="{Binding Semitone2}"/>
 
         </StackPanel>
 
@@ -898,30 +887,19 @@
 
           <Label FontWeight="Bold" Content="Octaves"/>
 
-          <ComboBox Width="50" HorizontalAlignment="Left"
-                              SelectionChanged="Octave3_SelectionChanged">
-            <ComboBoxItem HorizontalAlignment="Center" IsSelected="True">+0</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+1</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+2</ComboBoxItem>
-          </ComboBox>
+          <ComboBox 
+            Width="50" 
+            HorizontalAlignment="Left"
+            ItemsSource="{Binding SelectableOctaves}"
+            SelectedItem="{Binding Octave3}"/>
 
           <Label FontWeight="Bold" Content="Semitones"/>
 
-          <ComboBox Width="50" HorizontalAlignment="Left"
-                              SelectionChanged="Semitone3_SelectionChanged">
-            <ComboBoxItem HorizontalAlignment="Center" IsSelected="True">+0</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+1</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+2</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+3</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+4</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+5</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+6</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+7</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+8</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+9</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+10</ComboBoxItem>
-            <ComboBoxItem HorizontalAlignment="Center">+11</ComboBoxItem>
-          </ComboBox>
+          <ComboBox 
+            Width="50" 
+            HorizontalAlignment="Left"
+            ItemsSource="{Binding SelectableSemiTones}"
+            SelectedItem="{Binding Semitone3}"/>
 
         </StackPanel>
 
