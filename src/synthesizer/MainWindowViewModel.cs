@@ -27,9 +27,6 @@ namespace synthesizer
         private IWavePlayer _player;
 
         public double BaseFrequency { get; set; } = 110.0;
-        public SignalGeneratorType WaveType { get; set; } = SignalGeneratorType.Sin;
-        public SignalGeneratorType WaveType2 { get; set; } = SignalGeneratorType.Sin;
-        public SignalGeneratorType WaveType3 { get; set; } = SignalGeneratorType.Sin;
         public int Voice2Freq => Voice2Octave + Voice2Semi;
         public int Voice3Freq => Voice3Octave + Voice3Semi;
         public int Voice2Octave { get; set; }
@@ -37,12 +34,22 @@ namespace synthesizer
         public int Voice2Semi { get; set; }
         public int Voice3Semi { get; set; }
 
+        public SignalGeneratorType[] SelectableWaveforms =>
+          new [] 
+          { 
+            SignalGeneratorType.Sin   , 
+            SignalGeneratorType.SawTooth, 
+            SignalGeneratorType.Square  , 
+            SignalGeneratorType.Triangle, 
+            SignalGeneratorType.White   ,
+          };
+
         public void KeyDown(KeyEventArgs e)
         {
             var keyVal = keyboard.IndexOf(e.Key);
             if (keyVal > -1 && _oscillators[0,keyVal] is null)
             {
-                _oscillators[0,keyVal] = new SynthWaveProvider(WaveType, 44100, keyVal, Level1)
+                _oscillators[0,keyVal] = new SynthWaveProvider(WaveType1, 44100, keyVal, Level1)
                 {
                     BaseFrequency = BaseFrequency,
                     AttackSeconds = Attack,
@@ -133,7 +140,7 @@ namespace synthesizer
             _lpf = new LowPassFilterSampleProvider(_phaser, 20000);
             _fftProvider = new FFTSampleProvider(8, (ss, cs) => Dispatch(() => UpdateRealTimeData(ss, cs)), _lpf);
 
-            WaveType = SignalGeneratorType.Sin;
+            WaveType1 = SignalGeneratorType.Sin;
             Volume = 0.25;
             Attack = Attack2 = Attack3 = 0.01f;
             Decay = Decay2 = Decay3 = 0.01f;
@@ -308,5 +315,5 @@ namespace synthesizer
                 ResetCanExecute();
             }
         }
-    }
+  }
 }

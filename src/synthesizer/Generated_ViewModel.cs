@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows.Threading;
 
+using NAudio.Wave.SampleProviders;
+
 
 
 
@@ -222,6 +224,111 @@ namespace synthesizer
         partial void Changed_EnableTremolo (bool prev, bool current);
         // --------------------------------------------------------------------
         // END_PROPERTY: EnableTremolo (bool)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: WaveType1 (SignalGeneratorType)
+        // --------------------------------------------------------------------
+        SignalGeneratorType _WaveType1 = SignalGeneratorType.Sin;
+
+        void Raise_WaveType1 ()
+        {
+          OnPropertyChanged ("WaveType1");
+        }
+
+        public SignalGeneratorType WaveType1
+        {
+            get { return _WaveType1; }
+            set
+            {
+                if (_WaveType1 == value)
+                {
+                    return;
+                }
+
+                var prev = _WaveType1;
+
+                _WaveType1 = value;
+
+                Changed_WaveType1 (prev, _WaveType1);
+
+                Raise_WaveType1 ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_WaveType1 (SignalGeneratorType prev, SignalGeneratorType current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: WaveType1 (SignalGeneratorType)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: WaveType2 (SignalGeneratorType)
+        // --------------------------------------------------------------------
+        SignalGeneratorType _WaveType2 = SignalGeneratorType.Sin;
+
+        void Raise_WaveType2 ()
+        {
+          OnPropertyChanged ("WaveType2");
+        }
+
+        public SignalGeneratorType WaveType2
+        {
+            get { return _WaveType2; }
+            set
+            {
+                if (_WaveType2 == value)
+                {
+                    return;
+                }
+
+                var prev = _WaveType2;
+
+                _WaveType2 = value;
+
+                Changed_WaveType2 (prev, _WaveType2);
+
+                Raise_WaveType2 ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_WaveType2 (SignalGeneratorType prev, SignalGeneratorType current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: WaveType2 (SignalGeneratorType)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: WaveType3 (SignalGeneratorType)
+        // --------------------------------------------------------------------
+        SignalGeneratorType _WaveType3 = SignalGeneratorType.Sin;
+
+        void Raise_WaveType3 ()
+        {
+          OnPropertyChanged ("WaveType3");
+        }
+
+        public SignalGeneratorType WaveType3
+        {
+            get { return _WaveType3; }
+            set
+            {
+                if (_WaveType3 == value)
+                {
+                    return;
+                }
+
+                var prev = _WaveType3;
+
+                _WaveType3 = value;
+
+                Changed_WaveType3 (prev, _WaveType3);
+
+                Raise_WaveType3 ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_WaveType3 (SignalGeneratorType prev, SignalGeneratorType current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: WaveType3 (SignalGeneratorType)
         // --------------------------------------------------------------------
 
         // --------------------------------------------------------------------

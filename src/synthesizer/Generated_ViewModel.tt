@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows.Threading;
 
+using NAudio.Wave.SampleProviders;
+
 <#
   // Model defines what properties and commands are generated
 
@@ -15,6 +17,10 @@ using System.Windows.Threading;
       P ("bool"       , "EnableSubOsc"                                                        ),
       P ("bool"       , "EnableVibrato"                                                       ),
       P ("bool"       , "EnableTremolo"                                                       ),
+
+      P ("SignalGeneratorType"  , "WaveType1" , "SignalGeneratorType.Sin"                     ),
+      P ("SignalGeneratorType"  , "WaveType2" , "SignalGeneratorType.Sin"                     ),
+      P ("SignalGeneratorType"  , "WaveType3" , "SignalGeneratorType.Sin"                     ),
 
       LP("double"     , "Volume"              , @"$""{(int)(Volume * 100.0)}%"""              ),
 
