@@ -227,6 +227,41 @@ namespace synthesizer
         // --------------------------------------------------------------------
 
         // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: BaseFrequency (BaseFrequency)
+        // --------------------------------------------------------------------
+        BaseFrequency _BaseFrequency = BaseFrequency.A2;
+
+        void Raise_BaseFrequency ()
+        {
+          OnPropertyChanged ("BaseFrequency");
+        }
+
+        public BaseFrequency BaseFrequency
+        {
+            get { return _BaseFrequency; }
+            set
+            {
+                if (_BaseFrequency == value)
+                {
+                    return;
+                }
+
+                var prev = _BaseFrequency;
+
+                _BaseFrequency = value;
+
+                Changed_BaseFrequency (prev, _BaseFrequency);
+
+                Raise_BaseFrequency ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_BaseFrequency (BaseFrequency prev, BaseFrequency current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: BaseFrequency (BaseFrequency)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
         // BEGIN_PROPERTY: WaveType1 (SignalGeneratorType)
         // --------------------------------------------------------------------
         SignalGeneratorType _WaveType1 = SignalGeneratorType.Sin;

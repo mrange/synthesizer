@@ -7,6 +7,13 @@ using System.Windows.Input;
 
 namespace synthesizer
 {
+    public enum BaseFrequency
+    {
+      A2,
+      A3,
+      A4,
+    }
+
     public partial class MainWindowViewModel
     {
         private readonly List<Key> keyboard = new List<Key>
@@ -26,7 +33,6 @@ namespace synthesizer
         private LowPassFilterSampleProvider _lpf;
         private IWavePlayer _player;
 
-        public double BaseFrequency { get; set; } = 110.0;
         public int Voice2Freq => Voice2Octave + Voice2Semi;
         public int Voice3Freq => Voice3Octave + Voice3Semi;
         public int Voice2Octave { get; set; }
@@ -44,6 +50,28 @@ namespace synthesizer
             SignalGeneratorType.White   ,
           };
 
+        public BaseFrequency[] SelectableBaseFrequencies =>
+          new [] 
+          { 
+            BaseFrequency.A2, 
+            BaseFrequency.A3, 
+            BaseFrequency.A4, 
+          };
+
+        double BaseFrequencyInHz
+        {
+          get
+          {
+            switch(BaseFrequency)
+            {
+            case BaseFrequency.A2: return 110.0;
+            case BaseFrequency.A3: return 220.0;
+            case BaseFrequency.A4: return 440.0;
+            default: return 110.0;
+            }
+          }
+        }
+
         public void KeyDown(KeyEventArgs e)
         {
             var keyVal = keyboard.IndexOf(e.Key);
@@ -51,7 +79,7 @@ namespace synthesizer
             {
                 _oscillators[0,keyVal] = new SynthWaveProvider(WaveType1, 44100, keyVal, Level1)
                 {
-                    BaseFrequency = BaseFrequency,
+                    BaseFrequency = BaseFrequencyInHz,
                     AttackSeconds = Attack,
                     DecaySeconds = Decay,
                     SustainLevel = Sustain,
@@ -63,7 +91,7 @@ namespace synthesizer
 
                 _oscillators[1, keyVal] = new SynthWaveProvider(WaveType2, 44100, keyVal + Voice2Freq, Level2)
                 {
-                    BaseFrequency = BaseFrequency,
+                    BaseFrequency = BaseFrequencyInHz,
                     AttackSeconds = Attack2,
                     DecaySeconds = Decay2,
                     SustainLevel = Sustain2,
@@ -75,7 +103,7 @@ namespace synthesizer
 
                 _oscillators[2, keyVal] = new SynthWaveProvider(WaveType3, 44100, keyVal + Voice3Freq, Level3)
                 {
-                    BaseFrequency = BaseFrequency,
+                    BaseFrequency = BaseFrequencyInHz,
                     AttackSeconds = Attack3,
                     DecaySeconds = Decay3,
                     SustainLevel = Sustain3,

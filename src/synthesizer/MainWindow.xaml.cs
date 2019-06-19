@@ -18,27 +18,6 @@ namespace synthesizer
             Closing += ((obj, e) => _viewModel.OffCommand.Execute(null));
         }
 
-        private void SetOctave(object sender, RoutedEventArgs e)
-        {
-            var octaveSel = sender as RadioButton;
-
-            if (_viewModel != null)
-            {
-                switch (octaveSel.Name)
-                {
-                    case "A2":
-                        _viewModel.BaseFrequency = 110.0;
-                        break;
-                    case "A3":
-                        _viewModel.BaseFrequency = 220.0;
-                        break;
-                    case "A4":
-                        _viewModel.BaseFrequency = 440.0;
-                        break;
-                }
-            }
-        }
-
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);

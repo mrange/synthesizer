@@ -18,6 +18,8 @@ using NAudio.Wave.SampleProviders;
       P ("bool"       , "EnableVibrato"                                                       ),
       P ("bool"       , "EnableTremolo"                                                       ),
 
+      P ("BaseFrequency"  , "BaseFrequency"   , "BaseFrequency.A2"                            ),
+
       P ("SignalGeneratorType"  , "WaveType1" , "SignalGeneratorType.Sin"                     ),
       P ("SignalGeneratorType"  , "WaveType2" , "SignalGeneratorType.Sin"                     ),
       P ("SignalGeneratorType"  , "WaveType3" , "SignalGeneratorType.Sin"                     ),

@@ -72,31 +72,12 @@
                         VerticalAlignment="Top"
                         Content="Octave:"
                         FontWeight="Bold" />
-          <RadioButton
-                        x:Name="A2"
+          <ComboBox
                         Margin="5"
                         VerticalAlignment="Center"
-                        Checked="SetOctave"
-                        GroupName="Octave"
-                        IsChecked="true">
-            A2
-          </RadioButton>
-          <RadioButton
-                        x:Name="A3"
-                        Margin="5"
-                        VerticalAlignment="Center"
-                        Checked="SetOctave"
-                        GroupName="Octave">
-            A3
-          </RadioButton>
-          <RadioButton
-                        x:Name="A4"
-                        Margin="5"
-                        VerticalAlignment="Center"
-                        Checked="SetOctave"
-                        GroupName="Octave">
-            A4
-          </RadioButton>
+                        ItemsSource="{Binding SelectableBaseFrequencies}"
+                        SelectedItem="{Binding BaseFrequency}"
+                        />
         </StackPanel>
         <StackPanel
                     Grid.Row="3"
