@@ -15,44 +15,6 @@ namespace synthesizer
         public event PropertyChangedEventHandler PropertyChanged;
 
         // --------------------------------------------------------------------
-        // BEGIN_PROPERTY: Volume (double)
-        // --------------------------------------------------------------------
-        double _Volume = default;
-
-        void Raise_Volume ()
-        {
-          OnPropertyChanged ("Volume");
-          OnPropertyChanged ("VolumeLabel");
-        }
-
-        public string VolumeLabel => $"{(int)(Volume * 100.0)}%";
-
-        public double Volume
-        {
-            get { return _Volume; }
-            set
-            {
-                if (_Volume == value)
-                {
-                    return;
-                }
-
-                var prev = _Volume;
-
-                _Volume = value;
-
-                Changed_Volume (prev, _Volume);
-
-                Raise_Volume ();
-            }
-        }
-        // --------------------------------------------------------------------
-        partial void Changed_Volume (double prev, double current);
-        // --------------------------------------------------------------------
-        // END_PROPERTY: Volume (double)
-        // --------------------------------------------------------------------
-
-        // --------------------------------------------------------------------
         // BEGIN_PROPERTY: FrequencyAmplitudes (float[])
         // --------------------------------------------------------------------
         float[] _FrequencyAmplitudes = default;
@@ -120,6 +82,184 @@ namespace synthesizer
         partial void Changed_Waveform (float[] prev, float[] current);
         // --------------------------------------------------------------------
         // END_PROPERTY: Waveform (float[])
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: EnableLpf (bool)
+        // --------------------------------------------------------------------
+        bool _EnableLpf = default;
+
+        void Raise_EnableLpf ()
+        {
+          OnPropertyChanged ("EnableLpf");
+        }
+
+        public bool EnableLpf
+        {
+            get { return _EnableLpf; }
+            set
+            {
+                if (_EnableLpf == value)
+                {
+                    return;
+                }
+
+                var prev = _EnableLpf;
+
+                _EnableLpf = value;
+
+                Changed_EnableLpf (prev, _EnableLpf);
+
+                Raise_EnableLpf ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_EnableLpf (bool prev, bool current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: EnableLpf (bool)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: EnableSubOsc (bool)
+        // --------------------------------------------------------------------
+        bool _EnableSubOsc = default;
+
+        void Raise_EnableSubOsc ()
+        {
+          OnPropertyChanged ("EnableSubOsc");
+        }
+
+        public bool EnableSubOsc
+        {
+            get { return _EnableSubOsc; }
+            set
+            {
+                if (_EnableSubOsc == value)
+                {
+                    return;
+                }
+
+                var prev = _EnableSubOsc;
+
+                _EnableSubOsc = value;
+
+                Changed_EnableSubOsc (prev, _EnableSubOsc);
+
+                Raise_EnableSubOsc ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_EnableSubOsc (bool prev, bool current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: EnableSubOsc (bool)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: EnableVibrato (bool)
+        // --------------------------------------------------------------------
+        bool _EnableVibrato = default;
+
+        void Raise_EnableVibrato ()
+        {
+          OnPropertyChanged ("EnableVibrato");
+        }
+
+        public bool EnableVibrato
+        {
+            get { return _EnableVibrato; }
+            set
+            {
+                if (_EnableVibrato == value)
+                {
+                    return;
+                }
+
+                var prev = _EnableVibrato;
+
+                _EnableVibrato = value;
+
+                Changed_EnableVibrato (prev, _EnableVibrato);
+
+                Raise_EnableVibrato ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_EnableVibrato (bool prev, bool current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: EnableVibrato (bool)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: EnableTremolo (bool)
+        // --------------------------------------------------------------------
+        bool _EnableTremolo = default;
+
+        void Raise_EnableTremolo ()
+        {
+          OnPropertyChanged ("EnableTremolo");
+        }
+
+        public bool EnableTremolo
+        {
+            get { return _EnableTremolo; }
+            set
+            {
+                if (_EnableTremolo == value)
+                {
+                    return;
+                }
+
+                var prev = _EnableTremolo;
+
+                _EnableTremolo = value;
+
+                Changed_EnableTremolo (prev, _EnableTremolo);
+
+                Raise_EnableTremolo ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_EnableTremolo (bool prev, bool current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: EnableTremolo (bool)
+        // --------------------------------------------------------------------
+
+        // --------------------------------------------------------------------
+        // BEGIN_PROPERTY: Volume (double)
+        // --------------------------------------------------------------------
+        double _Volume = default;
+
+        void Raise_Volume ()
+        {
+          OnPropertyChanged ("Volume");
+          OnPropertyChanged ("VolumeLabel");
+        }
+
+        public string VolumeLabel => $"{(int)(Volume * 100.0)}%";
+
+        public double Volume
+        {
+            get { return _Volume; }
+            set
+            {
+                if (_Volume == value)
+                {
+                    return;
+                }
+
+                var prev = _Volume;
+
+                _Volume = value;
+
+                Changed_Volume (prev, _Volume);
+
+                Raise_Volume ();
+            }
+        }
+        // --------------------------------------------------------------------
+        partial void Changed_Volume (double prev, double current);
+        // --------------------------------------------------------------------
+        // END_PROPERTY: Volume (double)
         // --------------------------------------------------------------------
 
         // --------------------------------------------------------------------

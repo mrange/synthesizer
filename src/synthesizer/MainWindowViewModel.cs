@@ -36,9 +36,6 @@ namespace synthesizer
         public int Voice3Octave { get; set; }
         public int Voice2Semi { get; set; }
         public int Voice3Semi { get; set; }
-        public bool EnableLpf { get; set; }
-        public bool EnableSubOsc { get; set; }
-        public bool EnableVibrato { get; set; }
 
         public void KeyDown(KeyEventArgs e)
         {
@@ -264,6 +261,11 @@ namespace synthesizer
             {
                 _phaser.SweepRate = PhaserSweep;
             }
+        }
+
+        partial void Changed_EnableTremolo(bool prev, bool current)
+        {
+          TremoloGain = current ? 0.2F : 0.0F;
         }
 
         // Command events

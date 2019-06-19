@@ -276,9 +276,8 @@
                     <CheckBox
                         Margin="20,0,0,0"
                         VerticalAlignment="Top"
-                        Checked="LowPassFilter_Checked"
                         Name="LowPassFilter"
-                        Unchecked="LowPassFilter_Unchecked">
+                        IsChecked="{Binding EnableLpf}">
                         Enable
                     </CheckBox>
                     <Slider
@@ -300,17 +299,15 @@
                     <CheckBox
                         Margin="12,0,0,0"
                         VerticalAlignment="Top"
-                        Checked="SubOscillator_Checked"
                         Name="SubOscillator"
-                        Unchecked="SubOscillator_Unchecked">
+                        IsChecked="{Binding EnableSubOsc}">
                         Enable
                     </CheckBox>
                     <CheckBox
                         Margin="17,0,0,0"
                         VerticalAlignment="Top"
-                        Checked="Vibrato_Checked"
                         Name="Vibrato"
-                        Unchecked="Vibrato_Unchecked">
+                        IsChecked="{Binding EnableVibrato}">
                         Enable
                     </CheckBox>
                 </StackPanel>
@@ -355,9 +352,8 @@
                         <CheckBox
                             Margin="5,0,0,0"
                             VerticalAlignment="Top"
-                            Checked="Tremolo_Checked"
                             Name="Tremolo"
-                            Unchecked="Tremolo_Unchecked">
+                            IsChecked="{Binding EnableTremolo}">
                             Enable
                         </CheckBox>
                         <Label Margin="5,0,0,0" Content="x Freq." />
